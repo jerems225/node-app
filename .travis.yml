@@ -16,8 +16,8 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker build -t node-app .
-  - docker tag node-app YOUR_DOCKER_HUB/node-app:v1
+  - docker tag node-app jerems225/node-app:v1
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push YOUR_DOCKER_HUB/node-app
+  - docker push jerems225/node-app
